@@ -54,7 +54,9 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Type 1 architecture will have customer_id, customer_name and customer_address. This type will overwrite values when there are changes. 
+
+Type 2 architecture will have customer_id, customer_name, customer_address, version_number, valid_from_date, valid_to_date, current_or_not columns. When a change happens, this type will retain the original value and create a new row with new values. Additional columns such as valid_from_date and valid_to_date will indicate date of change. current_or_not column will indicate if it is the latest version. version_number will provided the number of times changes have been made. 
 ```
 
 ***
